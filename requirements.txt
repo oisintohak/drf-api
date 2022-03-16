@@ -1,7 +1,7 @@
 asgiref==3.5.0
 backports.zoneinfo==0.2.1
 cloudinary==1.29.0
-Django==4.0.3
+Django==3.2
 django-cloudinary-storage==0.3.0
 djangorestframework==3.13.1
 Pillow==9.0.1
