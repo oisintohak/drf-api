@@ -3,6 +3,7 @@ backports.zoneinfo==0.2.1
 cloudinary==1.29.0
 Django==3.2
 django-cloudinary-storage==0.3.0
+django-filter==21.1
 djangorestframework==3.13.1
 Pillow==9.0.1
 pytz==2021.3
