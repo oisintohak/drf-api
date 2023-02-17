@@ -71,7 +71,7 @@ if RENDER_EXTERNAL_HOSTNAME:
 if 'CLIENT_ORIGIN' in os.environ:
     CORS_ALLOWED_ORIGINS = [
         os.environ.get('CLIENT_ORIGIN'),
-        'https://moments-7ckj.onrender.com'
+        'https://moments-7ckj.onrender.com',
         'https://oisintohak-moments-4pyusrdzhn5.ws-eu40.gitpod.io',
     ]
 
