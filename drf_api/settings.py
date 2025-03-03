@@ -68,21 +68,18 @@ RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
+CORS_ALLOWED_ORIGINS = []
+
 if 'CLIENT_ORIGIN' in os.environ:
-    CORS_ALLOWED_ORIGINS = [
+    CORS_ALLOWED_ORIGINS.append(
         os.environ.get('CLIENT_ORIGIN'),
         'https://moments-7ckj.onrender.com',
-        'https://oisintohak-moments-4pyusrdzhn5.ws-eu40.gitpod.io',
-    ]
+    )
 
 if 'CLIENT_ORIGIN_DEV' in os.environ:
-    extracted_url = re.match(
-        r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV'), re.IGNORECASE
-    ).group(0)
-    CORS_ALLOWED_ORIGIN_REGEXES = [
-        rf"{extracted_url}(eu|us)\w+\.gitpod\.io$",
-    ]
-
+    CORS_ALLOWED_ORIGINS.append(
+        os.environ.get('CLIENT_ORIGIN_DEV'),
+    )
 CORS_ALLOW_CREDENTIALS = True
 
 # Application definition
