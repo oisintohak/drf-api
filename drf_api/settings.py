@@ -71,15 +71,15 @@ if RENDER_EXTERNAL_HOSTNAME:
 CORS_ALLOWED_ORIGINS = []
 
 if 'CLIENT_ORIGIN' in os.environ:
-    CORS_ALLOWED_ORIGINS.append(
+    CORS_ALLOWED_ORIGINS += [
         os.environ.get('CLIENT_ORIGIN'),
         'https://moments-7ckj.onrender.com',
-    )
+    ]
 
 if 'CLIENT_ORIGIN_DEV' in os.environ:
-    CORS_ALLOWED_ORIGINS.append(
+    CORS_ALLOWED_ORIGINS += [
         os.environ.get('CLIENT_ORIGIN_DEV'),
-    )
+    ]
 CORS_ALLOW_CREDENTIALS = True
 
 # Application definition
